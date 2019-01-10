@@ -1,5 +1,6 @@
 package com.example.mayukh.instagramclone;
 
+import android.content.Intent;
 import android.print.PrinterId;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button btnSave,btnGetAll;
+    private Button btnSave,btnGetAll,btnTransition;
     private EditText edtName,edtPunchSpeed,edtPunchPower,edtKickSpeed,edtKickPower;
     private TextView txtGetData;
     String allData;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         edtKickPower = findViewById(R.id.edtKickPower);
         txtGetData = findViewById(R.id.txtGetData);
         btnGetAll = findViewById(R.id.btnGetAll);
+        btnTransition = findViewById(R.id.btnNextActivity);
         btnSave.setOnClickListener(MainActivity.this);
         txtGetData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +87,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
             });
+            }
+        });
+        btnTransition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,
+                        SignUpLoginActivity.class);
+                startActivity(intent);
+
             }
         });
     }
