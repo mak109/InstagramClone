@@ -40,6 +40,7 @@ public class SignUpLoginActivity  extends AppCompatActivity {
                     public void done(ParseException e) {
                         if(e==null){
                             FancyToast.makeText(SignUpLoginActivity.this, appUser.get("username") + " is signed up successfully", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
+                            //Move to new(welcome) activity
                             Intent intent = new Intent(SignUpLoginActivity.this,WelcomeActivity.class);
                             startActivity(intent);
 
